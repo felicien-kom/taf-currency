@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --police-perso: 'Montserrat', Georgia, 'Times New Roman', Times, serif;
+    --clr-accent: #FE9103;
+    --clr-accent-hover: #fe9103ad;
+    --clr-particular: #00ccff;
+    --clr-particular-hover: #00ccff9c;
+    --bg-clr-primary: #FFFFFF;
+    --bg-clr-sec: #FFFFFF80;
+    --bg-clr-third: #F0F0F0;
+    --clr-primary: #000000;
+    --clr-sec: #151515;
+    --clr-third: #202020;
+    --btn-radius-perso: 1rem;
+}
+
+/* Normalize perso */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--police-perso);
+    font-size: 1rem;
+}
+
+html, body{
+    height: 100%;
+    /* Pour eviter des decalages involontaires */
+}
+html{
+    font-size: 16px;
+    /* Définition de mon rem (1 rem = 16px). */
+}
+body{
+    color: var(--clr-primary);
+    background-color: var(--bg-clr-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Maintenir le container mais etendre le body pour les ecrans ultra-larges */
+}
+
+button{
+    border: none;
+    cursor: pointer;
+    border-radius: var(--btn-radius-perso);
+}
+button:hover{
+    opacity: 0.8;
+    transition: all 0.5s ease;
+}
+
+input{
+    outline: none;
+    border: none;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+/* Start */
+
+/* Le container contient "tout" et permet une gestion efficace du design */
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    padding: 0.5rem 2vw;
+    /* Technique pour écrans ultra-larges pour ne pas se casser la tête 
+    lorsque ce n'est pas nécessaire mais rester pro. */
+    max-width: 900px;
+    max-height: 1000px;
+    margin: 0 auto;
+    /* Centrer le conteneur par rapport à l'écran (justement dans le cas des ultra-larges). */
+}
+
+/* Utilisé pour faciliter la construction de la structure. */
+
+/* Special */
+.container .phidden{
+    display: none;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container > div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.currencies > div, .numbers > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 15rem;
+    height: 5rem;
+}
+
+.numbers .format{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    width: 100%;
+}
+.numbers .format > *{
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.numbers .format input{
+    padding: 0 0.2rem;
+    width: 80%;
+    border: 1px solid black;
+    background-color: #dddddd;
+}
+.numbers .format .result{
+    width: 80%;
+}
+.numbers .format .symbol{
+    width: 20%;
+}

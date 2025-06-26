@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Currency</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="currencies">
+            <div class="bloc-from">
+                <label for="from">From</label>
+                <select name="from" id="from">
+                    <option value="EUR">Euro</option>
+                    <option value="USD">American Dollar</option>
+                    <option value="XAF">FCFA</option>
+                    <option value="JPY">Japanese Yen</option>
+                </select>
+            </div>
+            <div class="bloc-to">
+                <label for="to">To</label>
+                <select name="to" id="to">
+                    <option value="XAF">FCFA</option>
+                    <option value="EUR">Euro</option>
+                    <option value="USD">American Dollar</option>
+                    <option value="JPY">Japanese Yen</option>
+                </select>
+            </div>
+        </div>
+        <div class="numbers">
+            <div class="bloc-amount">
+                <label for="amount">Amount</label>
+                <div class="format">
+                    <input type="number" name="amount" id="amount" placeholder="Enter the amount">
+                    <span class="symbol-amount symbol" id="symbol-amount">€</span>
+                </div>
+            </div>
+            <div class="bloc-result">
+                <div class="for-result">Result</div>
+                <div class="format">
+                    <span class="result" id="result"></span>
+                    <span class="symbol-result symbol" id="symbol-result">XAF</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
