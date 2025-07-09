@@ -2,7 +2,7 @@
 
 :root{
     --police-perso: 'Montserrat', Georgia, 'Times New Roman', Times, serif;
-    --clr-accent: #FE9103;
+    --clr-accent: #0307fe;
     --clr-accent-hover: #fe9103ad;
     --clr-particular: #00ccff;
     --clr-particular-hover: #00ccff9c;
@@ -34,8 +34,6 @@ html{
     /* Définition de mon rem (1 rem = 16px). */
 }
 body{
-    color: var(--clr-primary);
-    background-color: var(--bg-clr-primary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,7 +50,7 @@ button:hover{
     transition: all 0.5s ease;
 }
 
-input{
+input, select{
     outline: none;
     border: none;
 }
@@ -67,75 +65,117 @@ a:hover{
 
 /* Start */
 
-/* Le container contient "tout" et permet une gestion efficace du design */
+body{
+    background-image: url('bg-img-02.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 .container{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
     height: 100%;
-    background-color: transparent;
-    padding: 0.5rem 2vw;
-    /* Technique pour écrans ultra-larges pour ne pas se casser la tête 
-    lorsque ce n'est pas nécessaire mais rester pro. */
-    max-width: 900px;
-    max-height: 1000px;
-    margin: 0 auto;
-    /* Centrer le conteneur par rapport à l'écran (justement dans le cas des ultra-larges). */
+    min-height: max(500px, 80vh);
+    padding: 0 2rem;
+}
+.content{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    width: 50%;
+    height: 85%;
+    min-height: 540px;
+    padding: 2rem 2rem;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-radius: 1rem;
 }
 
-/* Utilisé pour faciliter la construction de la structure. */
-
-/* Special */
-.container .phidden{
-    display: none;
+.content section{
+    margin: 0 0;
 }
-
-.container{
+.content .denomination{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-
-.container > div{
+.content .denomination > *{
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    margin: 0.5rem 0;
+}
+.content .denomination > h2{
+    font-size: 1.9rem;
+}
+.content .denomination > h3{
+    font-size: 1rem;
+}
+.content .denomination > h4{
+    font-size: 0.7rem;
+    font-style: italic;
+    text-align: right;
 }
 
-.currencies > div, .numbers > div{
+.block-from, .block-to{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 15rem;
-    height: 5rem;
+    border: 1px solid black;
+    min-height: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+.block-from #from, .block-to #to{
+    width: 5rem;
+}
+.block-from #amount, .block-to #result{
+    flex: 1;
+    padding: 0 0.5rem;
+}
+.block-from #amount, .block-to #result:disabled{
+    color: #000000;
+}
+.block-from #lbl-from, .block-to #lbl-to{
+    position: absolute;
+    top: -1.5rem;
+    left: 0;
+    font-size: 0.9rem;
 }
 
-.numbers .format{
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
-    width: 100%;
+.ratio{
+    margin-top: 2rem;
 }
-.numbers .format > *{
-    height: 100%;
-    border: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.ratio div{
+    text-align: center;
+    margin: 0.5rem 0;
 }
-.numbers .format input{
-    padding: 0 0.2rem;
-    width: 80%;
-    border: 1px solid black;
-    background-color: #dddddd;
+.ratio .one-to{
+    font-weight: bold;
 }
-.numbers .format .result{
-    width: 80%;
+.ratio .one-to #convert-base{
+    color: var(--clr-accent);
 }
-.numbers .format .symbol{
-    width: 20%;
+
+footer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.4rem;
+}
+
+@media screen and (max-width: 850px) {
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+    .content{
+        max-width: 480px;
+        width: auto;
+        margin: 0 0.5rem;
+        padding: 1rem 1rem;
+    }
 }

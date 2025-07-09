@@ -1,49 +1,65 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Currency</title>
+    <title>Currency Converter | By Le_Felicien</title>
 </head>
 <body>
     <div class="container" id="container">
-        <div class="currencies">
-            <div class="bloc-from">
-                <label for="from">From</label>
-                <select name="from" id="from">
-                    <option value="EUR">Euro</option>
-                    <option value="USD">American Dollar</option>
-                    <option value="XAF">FCFA</option>
-                    <option value="JPY">Japanese Yen</option>
-                </select>
-            </div>
-            <div class="bloc-to">
-                <label for="to">To</label>
-                <select name="to" id="to">
-                    <option value="XAF">FCFA</option>
-                    <option value="EUR">Euro</option>
-                    <option value="USD">American Dollar</option>
-                    <option value="JPY">Japanese Yen</option>
-                </select>
-            </div>
+        <div class="content">
+            <form action="#" method="get">
+                <section class="denomination">
+                    <h2>Currency Converter</h2>
+                    <h3>Convert any currency in the world into any another by just typing...</h3>
+                    <h4>By Le_Felicien</h4>
+                </section>
+                <section class="data">
+                    <div class="computing">
+                        <div class="block-from">
+                            <span id="lbl-from">Amount</span>
+                            <input type="number" name="amount" id="amount" placeholder="Enter the amount..." value="1">
+                            <select name="from" id="from">
+                                <option value="XAF">XAF</option>
+                                <option value="EUR" selected="selected">EUR</option>
+                                <option value="USD">USD</option>
+                                <option value="JPY">JPY</option>
+                            </select>
+                        </div>
+                        <div class="arrow"></div>
+                        <div class="block-to">
+                            <span id="lbl-to">Result</span>
+                            <input type="number" name="result" id="result" disabled="disabled">
+                            <select name="to" id="to">
+                                <option value="XAF">XAF</option>
+                                <option value="EUR">EUR</option>
+                                <option value="USD" selected="selected">USD</option>
+                                <option value="JPY">JPY</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="ratio">
+                        <div class="one-to">
+                            <span id="symbol-amount">€</span><span id="unit">1.000</span>&nbsp;
+                            <span id="code-from">EUR</span>
+                            <span id="symbol-equals">&nbsp;=&nbsp;</span>
+                            <span id="symbol-result">$</span><span id="convert-base">1.17</span>&nbsp;
+                            <span id="code-to">USD</span>
+                        </div>
+                        <div class="last-checked">
+                            <span>Lastly checked on </span>
+                            <span id="date-checked">05-06-2025</span>
+                            <span>at</span>
+                            <span id="time-checked">14:17</span>
+                        </div>
+                    </div>
+                </section>
+            </form>
         </div>
-        <div class="numbers">
-            <div class="bloc-amount">
-                <label for="amount">Amount</label>
-                <div class="format">
-                    <input type="number" name="amount" id="amount" placeholder="Enter the amount">
-                    <span class="symbol-amount symbol" id="symbol-amount">€</span>
-                </div>
-            </div>
-            <div class="bloc-result">
-                <div class="for-result">Result</div>
-                <div class="format">
-                    <span class="result" id="result"></span>
-                    <span class="symbol-result symbol" id="symbol-result">XAF</span>
-                </div>
-            </div>
-        </div>
+        <footer>
+            <p><a href="http://www.freepik.com">Designed by starline / Freepik</a></p>
+        </footer>
     </div>
     <script type="text/javascript" src="script.js"></script>
 </body>
