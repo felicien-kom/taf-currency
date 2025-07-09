@@ -18,7 +18,7 @@ let taux = 0;
 async function obtenirTauxDeChange(from, to) {
     // Clé du taux de change pour le cache
     const CACHE_KEY = 'taux_change_' + from + '_' + to;
-    const VALIDITY_PERIOD = 60 * 1000; // en millisecondes
+    const VALIDITY_PERIOD = 5 * 60 * 1000; // en millisecondes
 
     // Verification du cache
     const cache = localStorage.getItem(CACHE_KEY);
